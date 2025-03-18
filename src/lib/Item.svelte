@@ -3,14 +3,19 @@
   let title = "Title of Task";
   let desc =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
+  // let desc = "";
 </script>
 
-<div class="item {done ? 'done' : ''}">
+<!-- Todo: margin around the todo items should be managed by the list -->
+<div class="item" class:done>
   <label class="label">
     <input bind:checked={done} type="checkbox" />
     <h1 class="title">{title}</h1>
   </label>
-  <p class="desc">{desc}</p>
+
+  {#if desc}
+    <p class="desc">{desc}</p>
+  {/if}
 </div>
 
 <style>
@@ -24,13 +29,12 @@
     flex-wrap: nowrap;
     align-items: stretch;
     text-align: justify;
+    gap: 0.5rem;
 
     .label {
       display: flex;
       flex-direction: row;
       justify-items: center;
-
-      margin-bottom: 0.75rem;
 
       .title {
         font-size: 2.25rem;
@@ -49,9 +53,24 @@
     border-color: #aaa;
     background-color: #202020;
 
-    .title,
+    .label > .title,
     .desc {
       color: #aaa;
+    }
+  }
+
+  /* Transitions */
+  .item,
+  .done {
+    --trans-dur: 250ms; /* transition duration */
+
+    transition:
+      border-color var(--trans-dur),
+      background-color var(--trans-dur);
+
+    .label > .title,
+    .desc {
+      transition: color var(--trans-dur);
     }
   }
 </style>
