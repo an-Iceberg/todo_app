@@ -55,12 +55,15 @@
   }
 
   .done {
-    border-color: #aaa;
-    background-color: #202020;
+    --brightness: 75%;
+    filter: brightness(var(--brightness));
+    /* border-color: #aaa;
+    background-color: #202020; */
 
     .label > .title,
     .desc {
-      color: #aaa;
+      /* color: #aaa; */
+      filter: brightness(var(--brightness));
     }
   }
 

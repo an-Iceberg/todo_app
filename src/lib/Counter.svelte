@@ -1,11 +1,12 @@
 <script lang="ts">
-let count: number = $state(0)
+  let count: number = $state(0);
 
-function increment() {
-  count += 1;
-}
+  const inc = () => count++;
+  const reset = () => (count = 0);
 </script>
 
-<button onclick={increment}>
-  count is {count}
+<button onclick={inc}>
+  Count is {count}
 </button>
+
+<button onclick={reset}> Reset count </button>
