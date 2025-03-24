@@ -6,13 +6,13 @@
     public title: string = "";
     public desc: string = "";
 
-    constructor(title: string, desc: string) {
+    constructor(title: string = "", desc: string = "") {
       this.title = title;
       this.desc = desc;
     }
   }
 
-  let tasks = [
+  let tasks: Task_class[] = [
     new Task_class("Task 1", "desc 1"),
     new Task_class("Task 2", "desc 2"),
     new Task_class("Task 3", "desc 3"),
@@ -22,6 +22,8 @@
   // Todo: create list type
   // Todo: create task type with title, description, done
 </script>
+
+<button>Add Task</button>
 
 <div class="list">
   {#each tasks as task}
