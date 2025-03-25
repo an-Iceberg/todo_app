@@ -72,13 +72,11 @@
   .done {
     --trans-dur: 250ms; /* transition duration */
 
-    transition:
-      border-color var(--trans-dur),
-      background-color var(--trans-dur);
+    transition: filter var(--trans-dur);
 
     .label > .title,
     .desc {
-      transition: color var(--trans-dur);
+      transition: filter var(--trans-dur);
     }
   }
 </style>
