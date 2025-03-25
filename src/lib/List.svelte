@@ -3,6 +3,7 @@
 
   class Task_class {
     public done: boolean = false;
+    public present: boolean = true;
     public title: string = "";
     public desc: string = "";
 
@@ -13,7 +14,10 @@
   }
 
   let tasks = [
-    new Task_class("Task 1", "desc 1"),
+    new Task_class(
+      "Task 1",
+      "this is a long description describing the task at hand. it is necessary that the task at hand be done eventually.",
+    ),
     new Task_class("Task 2", "desc 2"),
     new Task_class("Task 3", "desc 3"),
     new Task_class("Task 4", "desc 4"),
@@ -25,7 +29,14 @@
 
 <div class="list">
   {#each tasks as task}
-    <Task title={task.title} desc={task.desc} />
+    {#if task.present}
+      <Task
+        title={task.title}
+        desc={task.desc}
+        done={task.done}
+        bind:present={task.present}
+      />
+    {/if}
   {/each}
 </div>
 
