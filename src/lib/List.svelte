@@ -25,6 +25,8 @@
 
   // Todo: create list type
   // Todo: create task type with title, description, done
+
+  // Todo: if present is false, remove taks from list
 </script>
 
 <div class="list">
