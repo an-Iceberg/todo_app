@@ -13,6 +13,7 @@
     }
   }
 
+  // Todo: find a better solution than this data structure. If possible, no data structure
   let tasks = [
     new Task_class(
       "Task 1",

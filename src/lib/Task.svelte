@@ -23,7 +23,8 @@
     <img src={bin} alt="delete" />
   </button>
 
-  <!-- Add «grip» to the right for drag and drop purposes -->
+  <!-- Todo: add «grip» to the right for drag and drop purposes -->
+  <!-- Todo: add edit button -->
 </div>
 
 <style>
