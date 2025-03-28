@@ -13,6 +13,9 @@
     }
   }
 
+  // TODO: solve the state problem using this:
+  // https://svelte.dev/tutorial/svelte/universal-reactivity
+  // https://svelte.dev/docs/svelte/stores#When-to-use-stores
   // Todo: find a better solution than this data structure. If possible, no data structure
   let tasks = [
     new Task_class(
