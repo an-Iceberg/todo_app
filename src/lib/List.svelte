@@ -1,36 +1,7 @@
 <script lang="ts">
+  import { tasks } from "./task-list.svelte";
+
   import Task from "./Task.svelte";
-
-  class Task_class {
-    public done: boolean = false;
-    public present: boolean = true;
-    public title: string = "";
-    public desc: string = "";
-
-    constructor(title: string, desc: string) {
-      this.title = title;
-      this.desc = desc;
-    }
-  }
-
-  // TODO: solve the state problem using this:
-  // https://svelte.dev/tutorial/svelte/universal-reactivity
-  // https://svelte.dev/docs/svelte/stores#When-to-use-stores
-  // Todo: find a better solution than this data structure. If possible, no data structure
-  let tasks = [
-    new Task_class(
-      "Task 1",
-      "this is a long description describing the task at hand. it is necessary that the task at hand be done eventually.",
-    ),
-    new Task_class("Task 2", "desc 2"),
-    new Task_class("Task 3", "desc 3"),
-    new Task_class("Task 4", "desc 4"),
-  ];
-
-  // Todo: create list type
-  // Todo: create task type with title, description, done
-
-  // Todo: if present is false, remove taks from list
 </script>
 
 <div class="list">
