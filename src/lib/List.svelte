@@ -6,7 +6,14 @@
 
 <div class="list">
   {#each tasks as task}
-    <Task title={task.title} desc={task.desc} />
+    {#if task.present}
+      <Task
+        title={task.title}
+        desc={task.desc}
+        done={task.done}
+        bind:present={task.present}
+      />
+    {/if}
   {/each}
 </div>
 
