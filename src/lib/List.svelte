@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { tasks } from "./task-list.svelte";
-
+  import { tasks, len } from "./task-list.svelte";
   import Task from "./Task.svelte";
 </script>
 
@@ -10,11 +9,14 @@
       <Task
         title={task.title}
         desc={task.desc}
-        done={task.done}
+        bind:done={task.done}
         bind:present={task.present}
       />
     {/if}
   {/each}
+
+  <p>task1.done: {tasks[0].done}</p>
+  <p>&num; of tasks: {len()}</p>
 </div>
 
 <style>

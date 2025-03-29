@@ -1,13 +1,16 @@
 <script lang="ts">
   import bin from "../assets/rubbish-bin-svgrepo-com.svg";
 
-  let { title, desc, done, present = $bindable() } = $props();
-
-  const del = () => (present = false);
+  let {
+    title,
+    desc,
+    done = $bindable(false),
+    present = $bindable(true),
+  } = $props();
 </script>
 
 <!-- Todo: animate delete with Svelte transitions -->
-<div class="task" class:done>
+<div class={["task", { done }]}>
   <div class="content">
     <label class="label">
       <input bind:checked={done} type="checkbox" />
@@ -17,9 +20,12 @@
     {#if desc}
       <p class="desc">{desc}</p>
     {/if}
+
+    <!-- <p>done: {done}</p>
+    <p>present: {present}</p> -->
   </div>
 
-  <button class="delete-icon" onclick={del}>
+  <button class="delete-icon" onclick={() => (present = false)}>
     <img src={bin} alt="delete" />
   </button>
 
