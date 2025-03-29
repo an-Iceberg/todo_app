@@ -1,8 +1,4 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "svelte.svelte-vscode",
-  "typescript.format.enable": true,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "editor.defaultFormatter": "svelte.svelte-vscode"
 }
