@@ -4,18 +4,10 @@
 </script>
 
 <div class="list">
-  {#each tasks as task}
-    {#if task.present}
-      <Task
-        title={task.title}
-        desc={task.desc}
-        bind:done={task.done}
-        bind:present={task.present}
-      />
-    {/if}
+  {#each tasks as task, index}
+    <Task title={task.title} desc={task.desc} {index} bind:done={task.done} />
   {/each}
 
-  <p>task1.done: {tasks[0].done}</p>
   <p>&num; of tasks: {len()}</p>
 </div>
 

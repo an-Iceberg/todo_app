@@ -1,12 +1,9 @@
 <script lang="ts">
   import bin from "../assets/rubbish-bin-svgrepo-com.svg";
 
-  let {
-    title,
-    desc,
-    done = $bindable(false),
-    present = $bindable(true),
-  } = $props();
+  import { remove } from "./task-list.svelte";
+
+  let { title, desc, index, done = $bindable(false) } = $props();
 </script>
 
 <!-- Todo: animate delete with Svelte transitions -->
@@ -23,9 +20,10 @@
 
     <!-- <p>done: {done}</p>
     <p>present: {present}</p> -->
+    <!-- <p>index: {index}</p> -->
   </div>
 
-  <button class="delete-icon" onclick={() => (present = false)}>
+  <button class="delete-icon" onclick={() => remove(index)}>
     <img src={bin} alt="delete" />
   </button>
 

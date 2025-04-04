@@ -1,6 +1,4 @@
 class Task_class {
-  // This determines if the task should be present in the DOM
-  public present: boolean = $state(true);
   // This is simply a visual indicator of the task state
   public done: boolean = $state(false);
   public title: string = $state("");
@@ -20,3 +18,4 @@ export const tasks = $state([
   new Task_class("Task 4", "desc 4"),
 ]);
 export let len = () => tasks.length;
+export let remove = (index: number) => tasks.splice(index, 1);
