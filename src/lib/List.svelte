@@ -17,8 +17,6 @@ $inspect(tasks);
   {#each tasks as task, index}
     <Task title={task.title} desc={task.desc} {index} bind:done={task.done} />
   {/each}
-
-  <!-- <p>&num; of tasks: {len()}</p> -->
 </div>
 
 <style>
