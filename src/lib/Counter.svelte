@@ -1,8 +1,8 @@
 <script lang="ts">
-  let count: number = $state(0);
+let count: number = $state(0);
 
-  const inc = () => count++;
-  const reset = () => (count = 0);
+const inc = () => count++;
+const reset = () => (count = 0);
 </script>
 
 <button onclick={inc}>

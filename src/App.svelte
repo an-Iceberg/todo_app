@@ -1,9 +1,9 @@
 <script lang="ts">
-  import svelteLogo from "./assets/svelte.svg";
-  import viteLogo from "/vite.svg";
-  import Counter from "./lib/Counter.svelte";
-  import Task from "./lib/Task.svelte";
-  import List from "./lib/List.svelte";
+import svelteLogo from "./assets/svelte.svg";
+import viteLogo from "/vite.svg";
+import Counter from "./lib/Counter.svelte";
+import Task from "./lib/Task.svelte";
+import List from "./lib/List.svelte";
 </script>
 
 <main>

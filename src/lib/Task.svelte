@@ -1,40 +1,47 @@
 <script lang="ts">
-  let done = $state(false);
-  let { title, desc } = $props();
-  // let title = "Title of Task";
-  // let desc = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  // tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  // quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  // consequat.`;
-  // let desc = "";
+import bin from "../assets/rubbish-bin-svgrepo-com.svg";
+import {remove} from "./task-list.svelte";
+
+let {title, desc, index, done = $bindable(false)} = $props();
 </script>
 
-<!-- Todo: margin around the todo items should be managed by the list -->
-<div class="item" class:done>
-  <label class="label">
-    <input bind:checked={done} type="checkbox" />
-    <h1 class="title">{title}</h1>
-  </label>
+<!-- Todo: animate delete with Svelte transitions -->
+<div class={["task", {done}]}>
+  <div class="content">
+    <label class="label">
+      <input bind:checked={done} type="checkbox" />
+      <h1 class="title">{title}</h1>
+    </label>
 
-  {#if desc}
-    <p class="desc">{desc}</p>
-  {/if}
+    {#if desc}
+      <p class="desc">{desc}</p>
+    {/if}
+  </div>
 
-  <!-- Add «grip» to the right for drag and drop purposes -->
+  <button class="delete-icon" onclick={() => remove(index)}>
+    <img src={bin} alt="delete" />
+  </button>
+
+  <!-- Todo: add «grip» to the right for drag and drop purposes -->
+  <!-- Todo: add edit button -->
 </div>
 
 <style>
-  .item {
-    border: 1px solid #fff;
-    border-radius: 10px;
-    padding: 0.5rem 0.75rem;
+.task {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    text-align: justify;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: start;
+  text-align: justify;
+  gap: 0.5rem;
+
+  .content {
+    flex-grow: 99;
 
     .label {
       display: flex;
@@ -54,29 +61,50 @@
     }
   }
 
-  .done {
-    --brightness: 75%;
-    filter: brightness(var(--brightness));
-    /* border-color: #aaa;
+  /* Todo: change SVG colour thru CSS */
+  .delete-icon {
+    cursor: pointer;
+    color: red;
+    padding: 0.7rem;
+    border: 1px solid red;
+    border-radius: 10px;
+
+    transition: background-color 250ms;
+
+    &:hover {
+      background-color: red;
+      transition: background-color 250ms;
+    }
+
+    img {
+      width: 2rem;
+    }
+  }
+}
+
+.done {
+  --brightness: 75%;
+  filter: brightness(var(--brightness));
+  /* border-color: #aaa;
     background-color: #202020; */
 
-    .label > .title,
-    .desc {
-      /* color: #aaa; */
-      filter: brightness(var(--brightness));
-    }
+  .label > .title,
+  .desc {
+    /* color: #aaa; */
+    filter: brightness(var(--brightness));
   }
+}
 
-  /* Transitions */
-  .item,
-  .done {
-    --trans-dur: 250ms; /* transition duration */
+/* Transitions */
+.task,
+.done {
+  --trans-dur: 250ms; /* transition duration */
 
+  transition: filter var(--trans-dur);
+
+  .label > .title,
+  .desc {
     transition: filter var(--trans-dur);
-
-    .label > .title,
-    .desc {
-      transition: filter var(--trans-dur);
-    }
   }
+}
 </style>
