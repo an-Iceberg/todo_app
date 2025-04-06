@@ -15,6 +15,9 @@ import List from "./lib/List.svelte";
 
   <button>Button</button>
 
+  <br />
+  <hr />
+
   <List />
 </main>
 

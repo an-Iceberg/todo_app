@@ -6,6 +6,8 @@ import Task from "./Task.svelte";
 $inspect(tasks);
 </script>
 
+<button>Add Task</button>
+
 <div class="list">
   {#if tasks.length == 0}
     <p>Nothing left to do ^ω^</p>
