@@ -10,7 +10,8 @@ class Task_class {
   }
 }
 
-// Todo: figure out a way to remove the tasks from the list
+// Idea: maybe add functions to the state to call them instead of the ones below?
+// That might not work with Svelte tho.
 export const tasks = $state([
   new Task_class("Task 1", "desc 1"),
   new Task_class("Task 2", "desc 2"),

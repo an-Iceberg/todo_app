@@ -21,6 +21,20 @@
     "trailingComma": "all",
     "tabWidth": 2,
     "semi": true,
-    "singleQuote": false
+    "singleQuote": false,
+    "bracketSameLine": false,
+    "arrowParens": "avoid",
+    "bracketSpacing": false,
+    "endOfLine": "lf",
+    "printWidth": 100,
+    "proseWrap": "always",
+    "useTabs": false,
+    "plugins": [
+      "prettier-plugin-svelte"
+    ],
+    "svelteAllowShorthand": true,
+    "svelteBracketNewLine": true,
+    "svelteIndentScriptAndStyle": false,
+    "svelteSortOrder": "scripts-markup-options-styles"
   }
 }
