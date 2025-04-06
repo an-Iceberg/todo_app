@@ -10,6 +10,7 @@ $inspect(tasks);
 
 <div class="list">
   {#if tasks.length == 0}
+    <!-- Todo: display a random ‹done› message -->
     <p>Nothing left to do ^ω^</p>
   {/if}
 
