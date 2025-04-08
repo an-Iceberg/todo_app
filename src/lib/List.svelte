@@ -1,12 +1,16 @@
 <script lang="ts">
 import {tasks, len} from "./task-list.svelte";
 import Task from "./Task.svelte";
+import plus from "../assets/plus-svgrepo-com.svg";
 
 // Debug: delete after done
 $inspect(tasks);
 </script>
 
-<button>Add Task</button>
+<button class="add-button">
+  <!-- Todo: use inline SVGs -->
+  <img src={plus} alt="+ Add task" />
+</button>
 
 <div class="list">
   {#if tasks.length == 0}
@@ -29,5 +33,24 @@ $inspect(tasks);
   flex-direction: column;
   justify-content: space-between;
   gap: var(--spacing);
+}
+
+.add-button {
+  aspect-ratio: 1/1;
+  border: 1px solid lime;
+  padding: 0.7rem;
+
+  transition: background-color 250ms;
+
+  &:hover {
+    background-color: lime;
+    transition: background-color 250ms;
+  }
+
+  img {
+    width: 2rem;
+
+    fill: lime;
+  }
 }
 </style>
