@@ -18,7 +18,7 @@ $inspect(tasks);
     <p>Nothing left to do ^ω^</p>
   {/if}
 
-  <!-- Not an elegang solution to use the index from the each block but at least it works -->
+  <!-- Not an elegant solution to use the index from the each block but at least it works -->
   {#each tasks as task, index}
     <Task title={task.title} desc={task.desc} {index} bind:done={task.done} />
   {/each}
