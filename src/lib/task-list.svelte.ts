@@ -20,3 +20,4 @@ export const tasks = $state([
 ]);
 export let len = () => tasks.length;
 export let remove = (index: number) => tasks.splice(index, 1);
+export let add = (title: string, desc: string) => tasks.push(new Task_class(title, desc))
