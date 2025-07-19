@@ -7,9 +7,11 @@ let {title, desc, index, done = $bindable(false)} = $props();
 
 <!-- Todo: animate delete with Svelte transitions -->
 <div class={["task", {done}]}>
+  <!-- Todo: wrap content in label and adjust CSS -->
   <div class="content">
     <label class="label">
       <input bind:checked={done} type="checkbox" />
+      <!-- Note: contenteditable HTML attribute -->
       <h1 class="title">{title}</h1>
     </label>
 
@@ -63,6 +65,7 @@ let {title, desc, index, done = $bindable(false)} = $props();
 
   /* Todo: change SVG colour thru CSS */
   .delete-icon {
+    aspect-ratio: 1/1;
     cursor: pointer;
     color: red;
     padding: 0.7rem;
